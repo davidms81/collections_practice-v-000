@@ -15,20 +15,21 @@ def sort_array_char_count(array)
 end
 
 def swap_elements(array)
-  array.insert(1,array.delete_at(2))
+  array[1], array[2] = array[2], array[1]
+  array
 end
 
 def reverse_array(array)
-  new_array = array.reverse
-  new_array
+  array.reverse
 end
 
 def kesha_maker(array)
-  kesha_array = []
+  new_array = []
   array.each do |name|
     name[2] = "$"
-    kesha_array << name
+    new_array << name
   end
+  new_array
 end
 
 def find_a(array)
@@ -38,9 +39,7 @@ def find_a(array)
 end
 
 def sum_array(array)
-  array.inject do |integer, x|
-    integer + x
-  end
+  array.inject { |sum, n| sum + n }
 end
 
 def add_s(array)
@@ -48,7 +47,7 @@ def add_s(array)
     if index == 1
       word
     else
-      word + "s"
+      word << "s"
     end
   end
 end
